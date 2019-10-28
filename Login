@@ -46,9 +46,9 @@ class Login {
 
 		driver.manage().window().maximize() // Mazimizar ventana del navegador
 
-		driver.findElement(By.xpath("ref rela/option[@value='4']")) // seleccionar tipo de documento
+		driver.findElement(By.xpath("ref rela/option[@value='4']")),click() // seleccionar tipo de documento
 
-		driver.findElement(By.xpath("ref abs").sendKeys('123456')) // Ingresar numero id
+		driver.findElement(By.xpath("ref abs")).sendKeys('123456') // Ingresar numero id
 
 		driver.findElement(By.xpath("ref rel")).sendKeys("q"#$%&") // Ingresar la contraseña
 

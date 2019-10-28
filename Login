@@ -37,35 +37,38 @@ class Login {
 	@BeforeTestCase
 	def logearse() {
 
-	System.setProperty('webdriver.chrome.driver', DriverFactory.getChromeDriverPath())// Instanciar webdriver
-  WebUI.openBrowser('url')//abrir el navegador
-  WebDriver driver = DriverFactory.getWebDriver()
+		WebUI.openBrowser('') // Abrir el nevegador 
+		WebDriver driver = DriverFactory.getWebDriver() // Controlar el navegador
 
-	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS)
+		driver.get('url')// Diriccionar a la pagina web
 
-	driver.manage().window().maximize()
-	
-	driver.findElement(By.xpath('elemento ID').sendKeys('123456')// Ingresar numero id
-  
-  	driver.findElement(By.xpath('elemento pwd')).sendKeys('pwd')
-	
+		//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) // controlador de timeout 
 
-	driver.findElement(By.xpath('elemento 1 checkbox')).click()
+		driver.manage().window().maximize() // Mazimizar ventana del navegador
 
-	driver.findElement(By.xpath('elemento 1 checkbox')).click()
+		driver.findElement(By.xpath("ref rela/option[@value='4']")) // seleccionar tipo de documento
 
-	driver.findElement(By.xpath('elemento button')).click()
-	
-	WebUI.takeScreenshot()
+		driver.findElement(By.xpath("ref abs").sendKeys('123456')) // Ingresar numero id
 
-	driver.findElement(By.id('Question')).sendKeys('Rta')
+		driver.findElement(By.xpath("ref rel")).sendKeys("q"#$%&") // Ingresar la contraseña
 
-	WebUI.takeScreenshot()
-	driver.findElement(By.xpath('elemento boton ')).click()
-	
-	Thread.sleep(10000)
-	
-	driver.findElement(By.xpath('boton')).click()
+
+		driver.findElement(By.xpath('ref abs')).click() // Seleccionar checkbox 
+
+		driver.findElement(By.xpath('ref abs')).click() // Seleccionar checkbox
+
+		driver.findElement(By.xpath("ref rel")).click() // Click en boton Ingresar
+
+		WebUI.takeScreenshot()
+
+		driver.findElement(By.id('ref abs')).sendKeys('jajaja') // Pregunta de seguridad
+
+		WebUI.takeScreenshot()
+		driver.findElement(By.xpath("ref realitva")).click()//  Click en el boton Verificar
+
+		Thread.sleep(10000)
+
+		driver.findElement(By.xpath("ref ralativa")).click() // boton cerrar popup.
 	
 	
 }

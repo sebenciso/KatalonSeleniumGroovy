@@ -1,0 +1,68 @@
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+
+import org.junit.Assert
+import org.junit.Before
+import org.openqa.selenium.By
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.remote.server.DriverFactory
+
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.testcase.TestCase as TestCase
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import internal.GlobalVariable as GlobalVariable
+
+//CustomKeywords.'configuracion.consultarAuditoria.consultarConex'()
+println ("print")
+
+public class VerificarLeabelsInformation {
+	
+	WebDriver driver
+	
+	@Test
+	
+	public void testVerificarLeabelsInformation () {
+		
+				
+		'Abrir el nevegador'
+		WebUI.openBrowser('')
+
+		'Controlar el navegador'
+		WebDriver driver = DriverFactory.getWebDriver()
+
+		'controlador de timeout'
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS)
+
+		'Mazimizar ventana del navegador'
+		driver.manage().window().maximize() //
+
+		'boton cerrar popup'
+		driver.findElement(By.xpath("//*[@id='']/div/div/div[1]/button/span")).click()
+
+		'Click en boton cambiar de empresa'
+		driver.findElement(By.xpath("//a[contains()]")).click()
+
+		'Click elemento'
+		driver.findElement(By.xpath("")).click()
+		
+		'Click sub elemento'
+		driver.findElement(By.linkText("//a")).click()  
+		
+		'Seleccionar opcion'
+		driver.findElement(By.xpath("option[@value = '']")
+    ")).click()
+		
+		'Assertion comprobacion tagName o campos tipoIdentificacion con cedula ciudadania'
+		String tId = driver.findElement(By.id("campo")).getText()
+		driver.findElement(By.tagName("nombreCampo")).click();
+		Assert.assertEquals(By.id(tId, "campo","nombre la opcion"))
+	
+		}

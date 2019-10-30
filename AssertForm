@@ -20,7 +20,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-//CustomKeywords.'configuracion.consultarAuditoria.consultarConex'()
+//CustomKeywords.'configuracion.consultarSubModulo.consultarModulo'()
 println ("print")
 
 public class VerificarLeabelsInformation {
@@ -57,8 +57,7 @@ public class VerificarLeabelsInformation {
 		driver.findElement(By.linkText("//a")).click()  
 		
 		'Seleccionar opcion'
-		driver.findElement(By.xpath("option[@value = '']")
-    ")).click()
+		driver.findElement(By.xpath("option[@value = '']").click()
 		
 		'Assertion comprobacion tagName o campos tipoIdentificacion con cedula ciudadania'
 		String tId = driver.findElement(By.id("campo")).getText()

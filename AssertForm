@@ -63,5 +63,53 @@ public class VerificarLeabelsInformation {
 		String tId = driver.findElement(By.id("campo")).getText()
 		driver.findElement(By.tagName("nombreCampo")).click();
 		Assert.assertEquals(By.id(tId, "campo","nombre la opcion"))
+		
+		'Assertion comprobacion tagName o campos tipoIdentificacion con cedula ciudadania'
+Assert.assertEquals(By.id('tipoIdentificacion')).getText()
+------------------------------------------------------Other Validations Forms-------------------------------------------------
+'Seleccionar Elemento tipo Identificacion'
+driver.findElement(By.tagName('type identification')).click()
+
+'Assertion o comprobacion '
+String tId = "Identification number"
+
+Assert.assertTrue(tId.contains("*"),"Obligatory Field")
+ 
+Assert.assertEquals(By.id(tId, "type identification","/option[@value=\'1\']"))
+
+Assert.assertSame( tId, "Identification number")
+
+/*
+String identificacion = new identificacion("iId", "type identification","/option[@value=\'1\']")
+Assert.that(tId.identification().equals(tId))
+*/
+
+'Ingresar número de Id'
+driver.findElement(By.id('//*[@id="identification"]')).sendKeys("100000000")
+
+'Nombre del Titular'
+driver.findElement(By.id('//*[@id="Name"]')).sendKeys("Name")
+
+'Primer Apellido'
+driver.findElement(By.id('//*[@id="firtsNameLabel"]')).sendKeys("SpellOne")
+
+'Segundo Apellido'
+driver.findElement(By.id('//*[@id="secoundSpell"]')).sendKeys("SpellTwo")
+
+'Número de tarjeta de crédito'
+driver.findElement(By.id('//*[@id="creditcard"]')).sendKeys("70000000")
+
+'Botón enviar o consultar'
+driver.findElement(By.id('//*[@id="send"]')).click()
+
+'Botón Otra consulta'
+driver.findElement(By.id('//*[@id="clean"]')).click()
+/*
+'Comprobacion numero identificacion'
+String numC = driver.findElement(By.id(numId,'type identification')).getText()
+driver.findElement(By.id("//*[@id="identification"]")).click()
+Assert.assertEquals(By.id(numId, 'type identification', '7009090'))
+*/
+
 	
-		}
+}

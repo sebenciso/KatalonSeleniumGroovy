@@ -48,7 +48,7 @@ class consultarPage {
 
 	@Keyword
 
-	def consultarConex () {
+	def consultarItem () {
 
         'Abrir el nevegador'		
 		WebUI.openBrowser('')  
@@ -65,13 +65,13 @@ class consultarPage {
 		'boton cerrar popup'
 		driver.findElement(By.xpath("//*span")).click()
 
-		'Click en boton cambiar de empresa'
+		'Click en boton cambiar de item'
 		driver.findElement(By.xpath("//a")).click() 
 		
-		'Click entidad'		
+		'Click item'		
 		driver.findElement(By.xpath("//a")).click() 
 		
-		'Click Conex'
+		'Click sub item'
 		driver.findElement(By.xpath("//")).click()
 		
 		'Captura de pantalla'
